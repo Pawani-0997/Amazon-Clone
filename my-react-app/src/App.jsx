@@ -1,37 +1,57 @@
+import atomicHabitsImg from "./assets/atomic habitsjpg.jpg";
+import creativeBrickBoxImg from "./assets/creative brick box.jpg";
+import electricPressureCookerImg from "./assets/electric pressure cooker.jpg";
+import facewashImg from "./assets/facewash.avif";
+import footballImg from "./assets/football.jpg";
+import harryPotterSetImg from "./assets/harry-poter-complete-set.jpg";
+import headphoneImg from "./assets/headphone.jpg";
+import heroImg from "./assets/hero.png";
+import himalayaToothpasteImg from "./assets/himalaya toothpaste.jpg";
+import mensShoesImg from "./assets/mensShoes.webp";
+import mensSlimFitJeansImg from "./assets/mensSlimfitjeans.webp";
+import mixerGrinderImg from "./assets/mixergrinder.jpg";
+import monopolyGameBoardImg from "./assets/monopoly game board.avif";
+import yogaMatImg from "./assets/yoga mat.jpg";
+import tvImg from "./assets/tv.jpg";
+import iphoneImg from "./assets/iphone.jpg";
+import laptopImg from "./assets/laptop.jpg";
+// New banner image import
+import megaSaleImg from "./assets/megaSale.jpg"; 
+
 import { useState, useMemo } from "react";
 
 const PRODUCTS = [
-  { id: 1, name: "Boat Airdopes 141 Bluetooth Truly Wireless Earbuds", price: 1299, mrp: 4990, category: "Electronics", rating: 4.2, reviews: 84321, image: "🎧", badge: "Best Seller", description: "40H playtime, ENx™ tech, ASAP™ Charge, IPX4", brand: "boAt" },
-  { id: 2, name: "Samsung 43\" Crystal 4K Ultra HD Smart LED TV", price: 28990, mrp: 54900, category: "Electronics", rating: 4.4, reviews: 12453, image: "📺", badge: "Deal of Day", description: "4K UHD, PurColor, HDR, Crystal Processor 4K", brand: "Samsung" },
-  { id: 3, name: "Apple iPhone 15 (128 GB) - Black", price: 69900, mrp: 79900, category: "Electronics", rating: 4.6, reviews: 23109, image: "📱", badge: "Amazon's Choice", description: "Dynamic Island, 48MP Camera, USB-C, A16 Bionic", brand: "Apple" },
-  { id: 4, name: "Lenovo IdeaPad Slim 3 Intel Core i3 15.6\" Laptop", price: 32990, mrp: 49990, category: "Electronics", rating: 4.1, reviews: 9876, image: "💻", badge: "Best Seller", description: "8GB RAM, 512GB SSD, Win 11, MS Office 2021", brand: "Lenovo" },
-  { id: 5, name: "Prestige Iris 750W Mixer Grinder", price: 2299, mrp: 4995, category: "Kitchen", rating: 4.3, reviews: 31204, image: "🫙", badge: "Best Seller", description: "3 Jars, 3 Speed + Pulse, Stainless Steel Blades", brand: "Prestige" },
-  { id: 6, name: "Instant Pot Duo 7-in-1 Electric Pressure Cooker", price: 5999, mrp: 8999, category: "Kitchen", rating: 4.5, reviews: 18900, image: "🥘", badge: "Amazon's Choice", description: "Pressure cooker, slow cooker, rice cooker & more", brand: "Instant Pot" },
-  { id: 7, name: "Nike Air Max 270 Men's Running Shoes", price: 7495, mrp: 10995, category: "Fashion", rating: 4.4, reviews: 5432, image: "👟", badge: "New Launch", description: "Breathable mesh upper, Air Max heel unit", brand: "Nike" },
-  { id: 8, name: "Levi's Men's 511 Slim Fit Jeans", price: 1799, mrp: 3999, category: "Fashion", rating: 4.2, reviews: 22110, image: "👖", badge: "Best Seller", description: "Slim through thigh, regular waist, tapered leg", brand: "Levi's" },
-  { id: 9, name: "Himalaya Herbals Complete Care Toothpaste 3-Pack", price: 249, mrp: 450, category: "Health", rating: 4.3, reviews: 45890, image: "🦷", badge: "Amazon's Choice", description: "Fluoride-free, prevents cavities, fresh breath", brand: "Himalaya" },
-  { id: 10, name: "Mamaearth Vitamin C Face Wash", price: 299, mrp: 499, category: "Health", rating: 4.1, reviews: 67234, image: "🧴", badge: "Best Seller", description: "With turmeric, for glowing skin, sulphate-free", brand: "Mamaearth" },
-  { id: 11, name: "Harry Potter Complete 7-Book Collection", price: 1799, mrp: 3499, category: "Books", rating: 4.8, reviews: 102345, image: "📚", badge: "Best Seller", description: "Paperback box set, J.K. Rowling", brand: "Bloomsbury" },
-  { id: 12, name: "Atomic Habits by James Clear", price: 399, mrp: 799, category: "Books", rating: 4.7, reviews: 89123, image: "📖", badge: "Amazon's Choice", description: "Tiny changes, remarkable results - #1 NYT Bestseller", brand: "Avery" },
-  { id: 13, name: "Boldfit Premium Yoga Mat 6mm Anti-Slip", price: 499, mrp: 1299, category: "Sports", rating: 4.2, reviews: 34567, image: "🧘", badge: "Best Seller", description: "NBR foam, carry strap, 183x61cm, 1kg", brand: "Boldfit" },
-  { id: 14, name: "Cosco Champions Football Size 5", price: 799, mrp: 1499, category: "Sports", rating: 4.0, reviews: 8765, image: "⚽", badge: null, description: "Machine stitched, durable PU material", brand: "Cosco" },
-  { id: 15, name: "Funskool Monopoly Classic Board Game", price: 699, mrp: 1299, category: "Toys", rating: 4.5, reviews: 21098, image: "🎲", badge: "Best Seller", description: "Classic property trading game for 2-8 players", brand: "Funskool" },
-  { id: 16, name: "LEGO Classic Creative Brick Box 484 Pieces", price: 2499, mrp: 3499, category: "Toys", rating: 4.7, reviews: 15432, image: "🧱", badge: "Amazon's Choice", description: "Build & rebuild, ages 4+, 33 building ideas", brand: "LEGO" },
+  { id: 1, name: "Boat Airdopes 141 Bluetooth Truly Wireless Earbuds", price: 1299, mrp: 4990, category: "Electronics", rating: 4.2, reviews: 84321, image: headphoneImg, badge: "Best Seller", description: "40H playtime, ENx™ tech, ASAP™ Charge, IPX4", brand: "boAt" },
+  { id: 2, name: "Samsung 43\" Crystal 4K Ultra HD Smart LED TV", price: 28990, mrp: 54900, category: "Electronics", rating: 4.4, reviews: 12453, image: tvImg, badge: "Deal of Day", description: "4K UHD, PurColor, HDR, Crystal Processor 4K", brand: "Samsung" },
+  { id: 3, name: "Apple iPhone 15 (128 GB) - Black", price: 69900, mrp: 79900, category: "Electronics", rating: 4.6, reviews: 23109, image: iphoneImg, badge: "Amazon's Choice", description: "Dynamic Island, 48MP Camera, USB-C, A16 Bionic", brand: "Apple" },
+  { id: 4, name: "Lenovo IdeaPad Slim 3 Intel Core i3 15.6\" Laptop", price: 32990, mrp: 49990, category: "Electronics", rating: 4.1, reviews: 9876, image: laptopImg, badge: "Best Seller", description: "8GB RAM, 512GB SSD, Win 11, MS Office 2021", brand: "Lenovo" },
+  { id: 5, name: "Prestige Iris 750W Mixer Grinder", price: 2299, mrp: 4995, category: "Kitchen", rating: 4.3, reviews: 31204, image: mixerGrinderImg, badge: "Best Seller", description: "3 Jars, 3 Speed + Pulse, Stainless Steel Blades", brand: "Prestige" },
+  { id: 6, name: "Instant Pot Duo 7-in-1 Electric Pressure Cooker", price: 5999, mrp: 8999, category: "Kitchen", rating: 4.5, reviews: 18900, image: electricPressureCookerImg, badge: "Amazon's Choice", description: "Pressure cooker, slow cooker, rice cooker & more", brand: "Instant Pot" },
+  { id: 7, name: "Nike Air Max 270 Men's Running Shoes", price: 7495, mrp: 10995, category: "Fashion", rating: 4.4, reviews: 5432, image: mensShoesImg, badge: "New Launch", description: "Breathable mesh upper, Air Max heel unit", brand: "Nike" },
+  { id: 8, name: "Levi's Men's 511 Slim Fit Jeans", price: 1799, mrp: 3999, category: "Fashion", rating: 4.2, reviews: 22110, image: mensSlimFitJeansImg, badge: "Best Seller", description: "Slim through thigh, regular waist, tapered leg", brand: "Levi's" },
+  { id: 9, name: "Himalaya Herbals Complete Care Toothpaste 3-Pack", price: 249, mrp: 450, category: "Health", rating: 4.3, reviews: 45890, image: himalayaToothpasteImg, badge: "Amazon's Choice", description: "Fluoride-free, prevents cavities, fresh breath", brand: "Himalaya" },
+  { id: 10, name: "Mamaearth Vitamin C Face Wash", price: 299, mrp: 499, category: "Health", rating: 4.1, reviews: 67234, image: facewashImg, badge: "Best Seller", description: "With turmeric, for glowing skin, sulphate-free", brand: "Mamaearth" },
+  { id: 11, name: "Harry Potter Complete 7-Book Collection", price: 1799, mrp: 3499, category: "Books", rating: 4.8, reviews: 102345, image: harryPotterSetImg, badge: "Best Seller", description: "Paperback box set, J.K. Rowling", brand: "Bloomsbury" },
+  { id: 12, name: "Atomic Habits by James Clear", price: 399, mrp: 799, category: "Books", rating: 4.7, reviews: 89123, image: atomicHabitsImg, badge: "Amazon's Choice", description: "Tiny changes, remarkable results - #1 NYT Bestseller", brand: "Avery" },
+  { id: 13, name: "Boldfit Premium Yoga Mat 6mm Anti-Slip", price: 499, mrp: 1299, category: "Sports", rating: 4.2, reviews: 34567, image: yogaMatImg, badge: "Best Seller", description: "NBR foam, carry strap, 183x61cm, 1kg", brand: "Boldfit" },
+  { id: 14, name: "Cosco Champions Football Size 5", price: 799, mrp: 1499, category: "Sports", rating: 4.0, reviews: 8765, image: footballImg, badge: null, description: "Machine stitched, durable PU material", brand: "Cosco" },
+  { id: 15, name: "Funskool Monopoly Classic Board Game", price: 699, mrp: 1299, category: "Toys", rating: 4.5, reviews: 21098, image: monopolyGameBoardImg, badge: "Best Seller", description: "Classic property trading game for 2-8 players", brand: "Funskool" },
+  { id: 16, name: "LEGO Classic Creative Brick Box 484 Pieces", price: 2499, mrp: 3499, category: "Toys", rating: 4.7, reviews: 15432, image: creativeBrickBoxImg, badge: "Amazon's Choice", description: "Build & rebuild, ages 4+, 33 building ideas", brand: "LEGO" },
 ];
 
 const CATEGORIES = ["All", "Electronics", "Fashion", "Kitchen", "Health", "Books", "Sports", "Toys"];
 
 const DEALS = [
-  { label: "Electronics", discount: "Up to 70% off", color: "#FF6B35", bg: "#FFF3EE", icon: "⚡" },
-  { label: "Fashion", discount: "Min 40% off", color: "#E91E8C", bg: "#FFF0F7", icon: "👗" },
-  { label: "Home & Kitchen", discount: "Up to 60% off", color: "#00897B", bg: "#E8F5E9", icon: "🏠" },
-  { label: "Books", discount: "Up to 50% off", color: "#1565C0", bg: "#E3F2FD", icon: "📚" },
+  { label: "Electronics", discount: "Up to 70% off", color: "#FF6B35", bg: "#FFF3EE", image: tvImg },
+  { label: "Fashion", discount: "Min 40% off", color: "#E91E8C", bg: "#FFF0F7", image: mensShoesImg },
+  { label: "Home & Kitchen", discount: "Up to 60% off", color: "#00897B", bg: "#E8F5E9", image: mixerGrinderImg },
+  { label: "Books", discount: "Up to 50% off", color: "#1565C0", bg: "#E3F2FD", image: harryPotterSetImg },
 ];
 
 function StarRating({ rating }) {
   return (
     <span style={{ color: "#FFA41C", fontSize: 13, letterSpacing: 1 }}>
-      {"★".repeat(Math.floor(rating))}{"☆".repeat(5 - Math.floor(rating))}
+      {"★".repeat(Math.floor(rating)) + "☆".repeat(5 - Math.floor(rating))}
       <span style={{ color: "#007185", fontWeight: 400, marginLeft: 4, fontSize: 12 }}>{rating.toFixed(1)}</span>
     </span>
   );
@@ -53,6 +73,27 @@ function Badge({ text }) {
   );
 }
 
+function ProductImage({ src, alt, size = 64, style = {} }) {
+  const isEmoji = typeof src === 'string' && src.length <= 4;
+  if (isEmoji) {
+    return <div style={{ fontSize: size, ...style }}>{src}</div>;
+  }
+  return (
+    <img 
+      src={src} 
+      alt={alt} 
+      style={{ 
+        width: "100%", 
+        height: "100%", 
+        maxHeight: size * 1.5, 
+        objectFit: "contain", 
+        mixBlendMode: "multiply",
+        ...style 
+      }} 
+    />
+  );
+}
+
 function ProductCard({ product, onAdd, onView }) {
   const discount = Math.round(((product.mrp - product.price) / product.mrp) * 100);
   return (
@@ -62,7 +103,9 @@ function ProductCard({ product, onAdd, onView }) {
       onMouseEnter={e => e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.12)"}
       onMouseLeave={e => e.currentTarget.style.boxShadow = "none"}
     >
-      <div style={{ textAlign: "center", fontSize: 64, padding: "12px 0", background: "#f9f9f9", borderRadius: 6 }}>{product.image}</div>
+      <div style={{ textAlign: "center", padding: "12px 0", background: "#f9f9f9", borderRadius: 6, height: 120, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
+        <ProductImage src={product.image} alt={product.name} size={64} />
+      </div>
       <div style={{ display: "flex", gap: 4, alignItems: "center", minHeight: 18 }}>
         <Badge text={product.badge} />
       </div>
@@ -93,7 +136,9 @@ function ProductCard({ product, onAdd, onView }) {
 function CartItem({ item, onRemove, onQtyChange }) {
   return (
     <div style={{ display: "flex", gap: 14, padding: "14px 0", borderBottom: "1px solid #e8e8e8" }}>
-      <div style={{ fontSize: 56, background: "#f9f9f9", borderRadius: 6, width: 80, height: 80, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{item.image}</div>
+      <div style={{ background: "#f9f9f9", borderRadius: 6, width: 80, height: 80, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, overflow: "hidden", padding: 4 }}>
+        <ProductImage src={item.image} alt={item.name} size={48} />
+      </div>
       <div style={{ flex: 1 }}>
         <div style={{ fontSize: 13, fontWeight: 500, color: "#0F1111", lineHeight: 1.4 }}>{item.name}</div>
         <div style={{ fontSize: 13, color: "#007600", marginTop: 2 }}>In Stock · Free Delivery</div>
@@ -123,7 +168,9 @@ function ProductModal({ product, onClose, onAdd }) {
     <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }} onClick={onClose}>
       <div style={{ background: "#fff", borderRadius: 10, maxWidth: 540, width: "100%", padding: 24, position: "relative", maxHeight: "90vh", overflowY: "auto" }} onClick={e => e.stopPropagation()}>
         <button onClick={onClose} style={{ position: "absolute", top: 12, right: 14, background: "none", border: "none", fontSize: 22, cursor: "pointer", color: "#555" }}>✕</button>
-        <div style={{ textAlign: "center", fontSize: 80, padding: "10px 0", background: "#f9f9f9", borderRadius: 8, marginBottom: 16 }}>{product.image}</div>
+        <div style={{ textAlign: "center", padding: "16px 0", background: "#f9f9f9", borderRadius: 8, marginBottom: 16, height: 180, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
+          <ProductImage src={product.image} alt={product.name} size={80} />
+        </div>
         <Badge text={product.badge} />
         <h3 style={{ fontSize: 16, fontWeight: 600, margin: "10px 0 4px", color: "#0F1111", lineHeight: 1.4 }}>{product.name}</h3>
         <div style={{ fontSize: 12, color: "#565959", marginBottom: 8 }}>by {product.brand}</div>
@@ -286,18 +333,23 @@ export default function AmazonClone() {
         {/* HOME PAGE */}
         {page === "home" && (
           <div>
-            {/* Hero Banner */}
+            {/* Full Hero Image Banner Integration */}
             {!search && activeCategory === "All" && (
-              <div style={{ background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)", borderRadius: 10, padding: "30px 40px", marginBottom: 20, color: "#fff", display: "flex", justifyContent: "space-between", alignItems: "center", overflow: "hidden", position: "relative" }}>
-                <div>
-                  <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", opacity: 0.8, marginBottom: 8 }}>Great Indian Festival</div>
-                  <h2 style={{ margin: 0, fontSize: 30, fontWeight: 900, lineHeight: 1.1 }}>Mega Sale 🎉</h2>
-                  <p style={{ margin: "10px 0 0", fontSize: 16, opacity: 0.9 }}>Up to 80% off on Electronics, Fashion & More</p>
-                  <button onClick={() => setActiveCategory("Electronics")} style={{ marginTop: 16, background: "#FFD814", color: "#131921", border: "none", borderRadius: 20, padding: "10px 24px", fontWeight: 700, fontSize: 14, cursor: "pointer" }}>
+              <div style={{ position: "relative", width: "100%", height: 260, borderRadius: 10, overflow: "hidden", marginBottom: 20, background: "#fff" }}>
+                <img 
+                  src={megaSaleImg} 
+                  alt="Mega Sale Banner" 
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }} 
+                />
+                {/* Content Overlay directly on top of the banner asset */}
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0) 70%)", padding: "40px", display: "flex", flexDirection: "column", justifyContent: "center", color: "#fff" }}>
+                  <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", opacity: 0.9, marginBottom: 6, fontWeight: 700, color: "#FF9900" }}>Great Indian Festival</div>
+                  <h2 style={{ margin: 0, fontSize: 34, fontWeight: 900, lineHeight: 1.1 }}>Mega Sale 🎉</h2>
+                  <p style={{ margin: "10px 0 0", fontSize: 16, opacity: 0.95, maxWidth: 400 }}>Up to 80% off on Electronics, Fashion & More</p>
+                  <button onClick={() => setActiveCategory("Electronics")} style={{ marginTop: 18, width: "fit-content", background: "#FFD814", color: "#131921", border: "none", borderRadius: 20, padding: "10px 24px", fontWeight: 700, fontSize: 14, cursor: "pointer", boxShadow: "0 2px 5px rgba(0,0,0,0.2)" }}>
                     Shop Now →
                   </button>
                 </div>
-                <div style={{ fontSize: 80, opacity: 0.3, position: "absolute", right: 40 }}>🛍️</div>
               </div>
             )}
 
@@ -305,12 +357,16 @@ export default function AmazonClone() {
             {!search && activeCategory === "All" && (
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 12, marginBottom: 20 }}>
                 {DEALS.map(d => (
-                  <div key={d.label} onClick={() => setActiveCategory(d.label.split(" ")[0])} style={{ background: d.bg, border: `1px solid ${d.color}22`, borderRadius: 8, padding: 16, cursor: "pointer", transition: "transform 0.15s" }}
+                  <div key={d.label} onClick={() => setActiveCategory(d.label.split(" ")[0])} style={{ background: d.bg, border: `1px solid ${d.color}22`, borderRadius: 8, padding: 16, cursor: "pointer", transition: "transform 0.15s", display: "flex", flexDirection: "column", justifyContent: "space-between", height: 140 }}
                     onMouseEnter={e => e.currentTarget.style.transform = "translateY(-2px)"}
                     onMouseLeave={e => e.currentTarget.style.transform = "none"}>
-                    <div style={{ fontSize: 28, marginBottom: 6 }}>{d.icon}</div>
-                    <div style={{ fontWeight: 700, fontSize: 14, color: d.color }}>{d.label}</div>
-                    <div style={{ fontSize: 12, color: "#555", marginTop: 2 }}>{d.discount}</div>
+                    <div style={{ height: 60, width: "100%", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 8, overflow: "hidden" }}>
+                      <img src={d.image} alt={d.label} style={{ maxHeight: "100%", maxWidth: "100%", objectFit: "contain", mixBlendMode: "multiply" }} />
+                    </div>
+                    <div>
+                      <div style={{ fontWeight: 700, fontSize: 14, color: d.color }}>{d.label}</div>
+                      <div style={{ fontSize: 12, color: "#555", marginTop: 2 }}>{d.discount}</div>
+                    </div>
                   </div>
                 ))}
               </div>
